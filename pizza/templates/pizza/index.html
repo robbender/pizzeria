@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block page_title %}-home{% endblock page_title %}
+
 {% block styles %}
-<link rel="stylesheet" href="{% static "styles/index.css" %}">
+{% comment %} <link rel="stylesheet" href="{% static "pizza/styles/index.css" %}"> {% endcomment %}
 
 {% endblock styles %}
 
@@ -27,7 +28,7 @@
             <div class="col-md-4">
                 <div class="p-3 py-5">
                     <div class="">
-                        <h3>Toppings</h3>
+                        <h3 class="white">Toppings</h3>
                         <br>
                         <div class="row width">
                             <div class="border px-3 p-1">
@@ -41,9 +42,10 @@
                                 <table class="table">
                                     <thead>
                                         <tr class="align-middle">
-                                            <th scope="col" class="">No.</th>
+                                            <th scope="col" class="">no.</th>
                                             <th scope="col">name</th>
-                                            <th scope="col">Action</th>
+                                            <th scope="col">action</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
 
@@ -54,11 +56,22 @@
                                             <td class="" scope="row">
                                                 {{ forloop.counter }}
                                             </td>
-                                            <td> {{ item.name }}</td>
+                                            <td class="white"> {{ item.name }}</td>
+                                    
                                             <td>
+                                                {% comment %} edit {% endcomment %}
                                                 {% comment %} <a href="{% url "delete-topping" topping.pk %}?next={{ request.path }}" {% endcomment %}
-                                                <a href=""
-                                                    type="button" class="btn btn-sm btn-danger"> &#10005;</a>
+                                                <a href="{% url 'update-topping'  item.pk %}"
+                                                    type="button" class="btn btn-sm btn-info "><span
+                                                        class="white">&#9998;</span></a>
+                                            </td>
+                                            
+                                            <td>
+                                                {% comment %} delete {% endcomment %}
+                                                {% comment %} <a
+                                                    href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
+                                                    {% endcomment %} <a href="" type="button"
+                                                    class="btn btn-sm btn-danger"> &#10005;</a>
                                             </td>
                                         </tr>
 

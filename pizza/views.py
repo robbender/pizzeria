@@ -29,3 +29,27 @@ def toppingFormView(request):
         return redirect("starting-page")
 
     return render(request, "pizza/topping_form.html", context)
+
+
+def updateToppingFormView(request, pk):
+    topping = Topping.objects.get(id=pk)
+    toppingForm = ToppingForm(instance=topping)
+    context = {
+        "toppingForm": toppingForm,
+        "topping": topping,
+    }
+
+    if request.method == "POST":
+        toppingForm = ToppingForm(request.POST, instance=topping)
+        if toppingForm.is_valid():
+            try:
+            # add logic to update pizza if topping is updated
+                toppingForm.save()
+                messages.success(request, "Topping updated successfully!")
+            except Exception as e:
+                error_message = e
+                messages.error(request, f"An error occured updating the topping. ERROR: {error_message}")
+
+        return redirect("starting-page")
+
+    return render(request, "pizza/topping_edit_form.html", context)

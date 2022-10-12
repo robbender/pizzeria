@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="{% static "styles/main.css" %}">
 
 
-    {% block css_files %}
-    {% endblock css_files %}
+    {% block styles %}
+    {% endblock styles %}
     <title>Pizzeria-{% block page_title %}{% endblock page_title %}</title>
 </head>
 
@@ -62,7 +62,7 @@
     <script src="{% static 'scripts/main.js' %}"></script>
 
 
-    {% block js_files %}{% endblock js_files %}
+    {% block scripts %}{% endblock scripts %}
 </body>
 
 </html>

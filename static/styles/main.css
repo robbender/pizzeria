@@ -221,6 +221,15 @@ tr {
     color: var(--color-gray);
 }
 
+.gray {
+    color: var(--color-gray);
+    /* background-color: var(--color-gray); */
+    
+}
+.white {
+    color: var(--color-light);
+}
+
 .dropdown-menu {
     z-index: 111;
     position: absolute;
