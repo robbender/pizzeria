@@ -11,12 +11,12 @@
 {% block content %}
 <div class="container my-5">
     <div class="mb-5">
-        <h2>Create Toppings</h2>
+        <h2>Create Pizza</h2>
     </div>
     <div>
         <form method="POST" action="">
             {% csrf_token %}
-            {{ toppingForm.as_p }}
+            {{ pizzaForm.as_p }}
             <input type="submit" value="Submit" />
         </form>
         <br>

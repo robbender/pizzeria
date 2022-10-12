@@ -9,5 +9,7 @@ urlpatterns = [
     path("topping-form", views.toppingFormView, name="topping-form"),
     path("update-topping/<str:pk>", views.updateToppingFormView, name="update-topping"),
     path("delete-topping/<str:pk>", views.deleteToppingView, name="delete-topping"),
+    path("pizza-form", views.pizzaFormView, name="pizza-form"),
+    path("pizza-detail/<str:pk>", views.pizzaDetail, name="pizza-detail"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

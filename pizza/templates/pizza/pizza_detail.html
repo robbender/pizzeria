@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}-home{% endblock page_title %}
+
+{% block styles %}
+{% comment %}
+<link rel="stylesheet" href="{% static "pizza/styles/index.css" %}"> {% endcomment %}
+
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+    <header>
+    </header>
+    <div class="container">
+        <h1 class="text-center mt-5">{{ pizza.name | title}}</h1>
+        <div class="row">
+            <div class="col p-5">
+                
+
+                    <table class="table">
+                        <thead>
+                            <tr class="align-middle">
+                                
+                                <th scope="col">toppings</th>
+                                <th scope="col">action</th>
+                                
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            
+                            <tr class="align-middle">
+                               
+                                <td class="white"> {{ pizza.toppings }}</td>
+                                <td>
+                                    {% comment %} delete {% endcomment %}
+                                    {% comment %} <a
+                                        href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
+                                        {% endcomment %} <a href="" type="button"
+                                        class="btn btn-sm btn-danger"> &#10005;</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

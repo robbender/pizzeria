@@ -9,10 +9,22 @@ from .forms import PizzaForm, ToppingForm, CartForm
 
 def startingPage(request):
     toppings = Topping.objects.all()
+    pizzas = Pizza.objects.all()
     context = {
         "toppings": toppings,
+        "pizzas": pizzas,
     }
     return render(request, "pizza/index.html", context)
+
+def pizzaDetail(request, pk):
+    pizza = Pizza.objects.get(id=pk)
+    toppings = Topping.objects.all()
+
+    context = {
+        "pizza": pizza,
+        "toppings": toppings,
+    }
+    return render(request, "pizza/pizza_detail.html", context)
 
 def toppingFormView(request):
     toppingForm = ToppingForm()
@@ -76,3 +88,24 @@ def deleteToppingView(request, pk):
         return redirect("starting-page")
 
     return render(request, "pizza/delete.html", context)
+
+
+def pizzaFormView(request):
+    pizzaForm = PizzaForm()
+    toppings = Topping.objects.all()
+
+    context = {
+        "pizzaForm": pizzaForm,
+        "toppings": toppings
+    }
+    if request.method == "POST":
+        pizzaForm = PizzaForm(request.POST)
+        if pizzaForm.is_valid():
+            pizzaForm.save()
+            messages.success(request, "Pizza created successfully!")
+        else:
+            messages.error(request, "An error occured creating the pizza.")
+        return redirect("starting-page")
+
+    return render(request, "pizza/pizza_form.html", context)
+
