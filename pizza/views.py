@@ -1,3 +1,4 @@
+from tkinter import E
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -53,3 +54,25 @@ def updateToppingFormView(request, pk):
         return redirect("starting-page")
 
     return render(request, "pizza/topping_edit_form.html", context)
+
+
+def deleteToppingView(request, pk):
+    topping = Topping.objects.get(id=pk)
+
+    context = {
+        "topping": topping,
+    }
+
+    if request.method == "POST":
+        try:
+            topping.delete()
+            messages.success(request, "Topping was deleted successfully!")
+
+        except Exception as e:
+            error_message = e 
+            messages.error(
+                request, f"An error occured updating the topping. ERROR: {error_message}")
+                
+        return redirect("starting-page")
+
+    return render(request, "pizza/delete.html", context)

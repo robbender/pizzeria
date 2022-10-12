@@ -70,7 +70,7 @@
                                                 {% comment %} delete {% endcomment %}
                                                 {% comment %} <a
                                                     href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                                    {% endcomment %} <a href="" type="button"
+                                                    {% endcomment %} <a href="{% url 'delete-topping' item.pk %}" type="button"
                                                     class="btn btn-sm btn-danger"> &#10005;</a>
                                             </td>
                                         </tr>
