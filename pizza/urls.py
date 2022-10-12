@@ -6,5 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     path("", views.startingPage, name="starting-page"),
+    path("topping-form", views.toppingFormView, name="topping-form"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}-topping-form{% endblock page_title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/topping_form.css" %}">
+
+{% endblock styles %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="mb-5">
+        <h2>Create Toppings</h2>
+    </div>
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ toppingForm.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

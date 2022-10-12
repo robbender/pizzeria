@@ -32,9 +32,42 @@
                         <div class="row width">
                             <div class="border px-3 p-1">
                                 <i class="fa fa-plus">
-                                </i>&nbsp; <a href="">Create
+                                </i>&nbsp; <a href="{% url "topping-form" %}">Create
                                     toppings</a>
                             </div>
+
+                            <div class="mt-5">
+
+                                <table class="table">
+                                    <thead>
+                                        <tr class="align-middle">
+                                            <th scope="col" class="">No.</th>
+                                            <th scope="col">name</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        {% for item in toppings %}
+                                        <tr class="align-middle">
+                                            <td class="" scope="row">
+                                                {{ forloop.counter }}
+                                            </td>
+                                            <td> {{ item.name }}</td>
+                                            <td>
+                                                {% comment %} <a href="{% url "delete-topping" topping.pk %}?next={{ request.path }}" {% endcomment %}
+                                                <a href=""
+                                                    type="button" class="btn btn-sm btn-danger"> &#10005;</a>
+                                            </td>
+                                        </tr>
+
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>
