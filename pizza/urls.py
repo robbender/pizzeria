@@ -12,5 +12,6 @@ urlpatterns = [
     path("pizza-form", views.pizzaFormView, name="pizza-form"),
     path("pizza-detail/<str:pk>", views.pizzaDetail, name="pizza-detail"),
     path("update-pizza/<str:pk>", views.updatePizzaFormView, name="update-pizza"),
+    path("delete-pizza/<str:pk>", views.deletePizzaView, name="delete-pizza"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

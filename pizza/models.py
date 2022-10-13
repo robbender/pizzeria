@@ -18,9 +18,9 @@ class Topping(models.Model):
 
 class PizzaTopping(models.Model):
     toppings = models.ForeignKey(
-        "Topping", on_delete=models.DO_NOTHING, blank=True, null=True)
+        "Topping", on_delete=models.CASCADE, blank=True, null=True)
     pizza = models.ForeignKey(
-        "Pizza", on_delete=models.DO_NOTHING, blank=True, null=True)
+        "Pizza", on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -30,4 +30,4 @@ class Cart(models.Model):
     name = models.CharField(max_length=200, unique=True)
     order_no = models.CharField(max_length=200)
     pizza = models.ForeignKey(
-        Pizza, on_delete=models.DO_NOTHING, blank=True, null=True)
+        Pizza, on_delete=models.CASCADE, blank=True, null=True)

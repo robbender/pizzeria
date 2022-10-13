@@ -72,7 +72,7 @@ def deleteToppingView(request, pk):
     topping = Topping.objects.get(id=pk)
 
     context = {
-        "topping": topping,
+        "obj": topping,
     }
 
     if request.method == "POST":
@@ -139,15 +139,16 @@ def updatePizzaFormView(request, pk):
 
 
 def deletePizzaView(request, pk):
-    pizza = Topping.objects.get(id=pk)
+    pizza = Pizza.objects.get(id=pk)
 
     context = {
-        "pizza": pizza
+        "obj": pizza
     }
 
     if request.method == "POST":
         try:
             pizza.delete()
+            
             messages.success(request, "Pizza was deleted successfully!")
 
         except Exception as e:

@@ -19,14 +19,15 @@
             {% csrf_token %}
             {{ pizzaForm.as_p }}
             <br>
+            current toppings:
             {% for item in pizza.toppings.all  %}
-            <div class="align-middle">
-                <p class="white">current toppings: <strong>{{ item.name }}</strong></p>
-            </div>
+                <p class="white">{{ item.name }}</p>
             {% endfor %}
             <br>
             <input type="submit" value="Submit" />
         </form>
+        <br>
+        <a href="{% url "starting-page" %}">Back</a>
     </div>
 </div>
 
