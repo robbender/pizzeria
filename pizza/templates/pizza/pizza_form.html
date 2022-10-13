@@ -13,7 +13,28 @@
     <div class="mb-5">
         <h2>Create Pizza</h2>
     </div>
-    <div>
+    <div class="row">
+        <div class="col">
+            <form class="form" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for field in pizzaForm %}
+                <div class="form__group form__group">
+                    <label for="">{{ field.label }}</label> 
+                    {{ field }} 
+                </div> 
+                    
+                {% endfor %} 
+                <button class="btn btn--main"
+                        type="submit">Save</button>
+            </form>
+            <br>
+            <a href="{% url "starting-page" %}">Back</a>
+            <br>
+
+        </div>
+    </div>
+    {% comment %} <div>
         <form method="POST" action="">
             {% csrf_token %}
             {{ pizzaForm.as_p }}
@@ -21,7 +42,7 @@
         </form>
         <br>
         <a href="{% url "starting-page" %}">Back</a>
-    </div>
+    </div> {% endcomment %}
 </div>
 
 {% endblock content %}

@@ -5,7 +5,6 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static "pizza/styles/topping_form.css" %}">
-
 {% endblock styles %}
 
 {% block content %}
@@ -14,11 +13,32 @@
         <h2>Create Toppings</h2>
     </div>
     <div>
-        <form method="POST" action="">
+        <div class="row">
+            <div class="col">
+                <form class="form" action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {% for field in toppingForm %}
+                    <div class="form__group form__group">
+                        <label for="">{{ field.label }}</label
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+
+                    <button class="btn btn--main" type="submit">
+                        Save
+                    </button>
+                </form>
+                <br>
+                <br>
+
+            </div>
+        </div>
+        {% comment %} <form method="POST" action="">
             {% csrf_token %}
             {{ toppingForm.as_p }}
             <input type="submit" value="Submit" />
-        </form>
+        </form> {% endcomment %}
         <br>
         <a href="{% url "starting-page" %}">Back</a>
     </div>

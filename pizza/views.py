@@ -93,14 +93,20 @@ def deleteToppingView(request, pk):
 def pizzaFormView(request):
     pizzaForm = PizzaForm()
     toppings = Topping.objects.all()
-
+    
     context = {
         "pizzaForm": pizzaForm,
-        "toppings": toppings
+        "toppings": toppings,
     }
+
     if request.method == "POST":
         pizzaForm = PizzaForm(request.POST)
+
         if pizzaForm.is_valid():
+            # if this is a menu app and only one type of pizza could be saved
+            # pizzaForm.save(commit=False)
+            # save pizza description or name with sorted list of toppings
+    
             pizzaForm.save()
             messages.success(request, "Pizza created successfully!")
         else:
@@ -148,7 +154,6 @@ def deletePizzaView(request, pk):
     if request.method == "POST":
         try:
             pizza.delete()
-            
             messages.success(request, "Pizza was deleted successfully!")
 
         except Exception as e:

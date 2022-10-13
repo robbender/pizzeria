@@ -548,8 +548,9 @@ tr {
 }
 
 .form__group select option {
-    background-color: var(--color-dark-light);
-    color: var(--color-light);
+    /* color: var(--color-dark); */
+    color: var(--color-gray);
+    /* background-color: var(--color-light); */
     padding: 0 10rem;
 }
 
