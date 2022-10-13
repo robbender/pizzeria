@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}-edit-pizza-form{% endblock page_title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "pizza/styles/topping_edit_form.css" %}">
+
+{% endblock styles %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="mb-5">
+        <h2>Edit {{ pizza.name }}</h2>
+    </div>
+    <div>
+        
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ pizzaForm.as_p }}
+            <br>
+            {% for item in pizza.toppings.all  %}
+            <div class="align-middle">
+                <p class="white">current toppings: <strong>{{ item.name }}</strong></p>
+            </div>
+            {% endfor %}
+            <br>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

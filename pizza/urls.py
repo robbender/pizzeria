@@ -11,5 +11,6 @@ urlpatterns = [
     path("delete-topping/<str:pk>", views.deleteToppingView, name="delete-topping"),
     path("pizza-form", views.pizzaFormView, name="pizza-form"),
     path("pizza-detail/<str:pk>", views.pizzaDetail, name="pizza-detail"),
+    path("update-pizza/<str:pk>", views.updatePizzaFormView, name="update-pizza"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

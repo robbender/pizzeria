@@ -109,3 +109,53 @@ def pizzaFormView(request):
 
     return render(request, "pizza/pizza_form.html", context)
 
+
+def updatePizzaFormView(request, pk):
+    pizza = Pizza.objects.get(id=pk)
+    pizzaForm = PizzaForm(instance=pizza)
+    # topping = Topping.objects.get(id=pk)
+
+    context = {
+        "pizzaForm": pizzaForm,
+        # "topping": topping,
+        "pizza": pizza,
+    }
+
+    if request.method == "POST":
+        pizzaForm = PizzaForm(request.POST, instance=pizza)
+        if pizzaForm.is_valid():
+            try:
+            # add logic to update pizza if topping is updated
+                pizzaForm.save()
+                messages.success(request, "Pizza updated successfully!")
+            except Exception as e:
+                error_message = e
+                messages.error(request, f"An error occured updating the pizza. ERROR: {error_message}")
+
+        return redirect("starting-page")
+
+    return render(request, "pizza/pizza_edit_form.html", context)
+
+
+
+def deletePizzaView(request, pk):
+    pizza = Topping.objects.get(id=pk)
+
+    context = {
+        "pizza": pizza
+    }
+
+    if request.method == "POST":
+        try:
+            pizza.delete()
+            messages.success(request, "Pizza was deleted successfully!")
+
+        except Exception as e:
+            error_message = e
+            messages.error(
+                request, f"An error occured updating the topping. ERROR: {error_message}")
+
+        return redirect("starting-page")
+
+    return render(request, "pizza/delete.html", context)
+

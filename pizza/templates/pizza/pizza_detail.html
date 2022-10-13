@@ -32,17 +32,16 @@
 
                         <tbody>
                             
+                            {% for item in pizza.toppings.all  %}
                             <tr class="align-middle">
-                               
-                                <td class="white"> {{ pizza.toppings }}</td>
+                                <td class="white"> {{ item.name }}</td>
                                 <td>
-                                    {% comment %} delete {% endcomment %}
-                                    {% comment %} <a
-                                        href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                        {% endcomment %} <a href="" type="button"
+                                    <a href="{% url 'delete-topping' item.pk %}" type="button"
                                         class="btn btn-sm btn-danger"> &#10005;</a>
                                 </td>
+                                
                             </tr>
+                            {% endfor %}
 
                         </tbody>
                     </table>

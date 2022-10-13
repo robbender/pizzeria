@@ -123,18 +123,14 @@
                                     <td class="white"><a href="{% url "pizza-detail" item.pk %}">{{ item.name }}</a></td>
 
                                     <td>
-                                        {% comment %} edit {% endcomment %}
-                                        {% comment %} <a
-                                            href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                            {% endcomment %} <a href="" type="button"
+                                        {% comment %} edit pizza {% endcomment %}
+                                        <a href="{% url "update-pizza" item.pk %}" type="button"
                                             class="btn btn-sm btn-info "><span class="white">&#9998;</span></a>
                                     </td>
 
                                     <td>
-                                        {% comment %} delete {% endcomment %}
-                                        {% comment %} <a
-                                            href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                            {% endcomment %} <a href="" type="button"
+                                        {% comment %} delete pizza {% endcomment %}
+                                        <a href="" type="button"
                                             class="btn btn-sm btn-danger"> &#10005;</a>
                                     </td>
                                 </tr>
