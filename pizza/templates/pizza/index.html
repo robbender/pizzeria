@@ -70,7 +70,7 @@
                                                 {% comment %} delete {% endcomment %}
                                                 {% comment %} <a
                                                     href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                                    {% endcomment %} <a href="{% url 'delete-pizza-topping' item.pk %}" type="button"
+                                                    {% endcomment %} <a href="{% url 'delete-topping' item.pk %}" type="button"
                                                     class="btn btn-sm btn-danger"> &#10005;</a>
                                             </td>
                                         </tr>
@@ -91,12 +91,12 @@
             <div class="col-md-4">
                 <div class="p-3 py-5">
                     <div class="">
-                        <h3>Create Pizza</h3>
+                        <h3>Pizzas</h3>
                         <br>
                         <div class="row width">
                             <div class="border px-3 p-1">
                                 <i class="fa fa-plus">
-                                </i>&nbsp; <a href="{% url "pizza-form" %}">Start Pizza</a>
+                                </i>&nbsp; <a href="{% url "pizza-form" %}">Create Pizza</a>
                             </div>
                         </div>
                     </div>
