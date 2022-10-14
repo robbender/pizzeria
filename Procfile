@@ -1,1 +1,1 @@
-web: gunicorn robb-pizzeria.wsgi
+web: gunicorn pizzeria.wsgi
