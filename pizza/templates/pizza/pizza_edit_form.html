@@ -28,6 +28,8 @@
                 current toppings:
                 {% for item in pizza.toppings.all  %}
                 <p class="white">{{ item.name }}</p>
+                {% empty %}
+                <p>No Toppings</p>
                 {% endfor %}
                 <br>
                 <button class="btn btn--main" type="submit">Save</button>

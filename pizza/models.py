@@ -6,7 +6,8 @@ from django.db import models
 class Pizza(models.Model):
     name = models.CharField(max_length=200, unique=True)
     toppings = models.ManyToManyField(
-        "Topping", through="PizzaTopping", related_name="toppings")
+        "Topping", through="PizzaTopping", related_name="topping")
+        
 
 
 class Topping(models.Model):

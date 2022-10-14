@@ -22,10 +22,7 @@
                     <table class="table">
                         <thead>
                             <tr class="align-middle">
-                                
                                 <th scope="col">toppings</th>
-                                <th scope="col">action</th>
-                                
                             </tr>
                         </thead>
 
@@ -34,17 +31,25 @@
                             
                             {% for item in pizza.toppings.all  %}
                             <tr class="align-middle">
-                                <td class="white"> {{ item.name }}</td>
-                                <td>
-                                    <a href="{% url 'delete-topping' item.pk %}" type="button"
+                                <td class="">{{ item.name }}</td>
+                                {% comment %} <td>
+                                    <a href="{% url 'delete-pizza-topping' item.pk %}?next={{ request.path }}"
+                                        type="button"
                                         class="btn btn-sm btn-danger"> &#10005;</a>
-                                </td>
+                                </td> {% endcomment %}
                                 
                             </tr>
                             {% endfor %}
 
                         </tbody>
                     </table>
+                    <br>
+                      <div>
+                          {% comment %} <---- Edit pizza -----> {% endcomment %}
+                          <a href="{% url "update-pizza" pizza.pk %}" type="button" class="btn btn-sm btn-info "><span
+                                  class="white">&#9998; Edit Pizza</span></a> 
+                      </div>
+
                     <br>
                     <a href="{% url "starting-page" %}">Back</a>
             </div>

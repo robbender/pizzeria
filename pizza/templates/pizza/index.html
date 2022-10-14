@@ -70,7 +70,7 @@
                                                 {% comment %} delete {% endcomment %}
                                                 {% comment %} <a
                                                     href="{% url "delete-topping" topping.pk %}?next={{ request.path }}"
-                                                    {% endcomment %} <a href="{% url 'delete-topping' item.pk %}" type="button"
+                                                    {% endcomment %} <a href="{% url 'delete-pizza-topping' item.pk %}" type="button"
                                                     class="btn btn-sm btn-danger"> &#10005;</a>
                                             </td>
                                         </tr>
@@ -121,6 +121,10 @@
                                         {{ forloop.counter }}
                                     </td>
                                     <td class="white"><a href="{% url "pizza-detail" item.pk %}">{{ item.name }}</a></td>
+                                    {% comment %} <td class="white"><button type="button" class="btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            {{ item.name }}
+                                        </button></td> {% endcomment %}
 
                                     <td>
                                         {% comment %} edit pizza {% endcomment %}
@@ -139,6 +143,27 @@
 
                             </tbody>
                         </table>
+                        {% comment %} <---- start modal-----> {% endcomment %}
+                        {% comment %} <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    {% include "pizza/includes/pizza_detail.html" %}
+                                    
+                                     <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                        {% comment %} <----- end modal ------> {% endcomment %}
+
                     </div>
 
                 </div>

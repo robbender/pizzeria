@@ -2,7 +2,7 @@ from tkinter import E
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import Pizza, Topping, Cart
+from .models import Pizza, Topping, Cart, PizzaTopping
 from .forms import PizzaForm, ToppingForm, CartForm
 
 # Create your views here.
@@ -10,19 +10,23 @@ from .forms import PizzaForm, ToppingForm, CartForm
 def startingPage(request):
     toppings = Topping.objects.all()
     pizzas = Pizza.objects.all()
+    # pizza_toppings = PizzaTopping.objects.all()
     context = {
         "toppings": toppings,
         "pizzas": pizzas,
+        # "pizza_toppings": pizza_toppings,
     }
     return render(request, "pizza/index.html", context)
 
 def pizzaDetail(request, pk):
     pizza = Pizza.objects.get(id=pk)
     toppings = Topping.objects.all()
-
+    # pizza_topping = PizzaTopping.objects.filter(pizza__id=pk)
+    # print("pizza topping:", pizza_topping)
     context = {
         "pizza": pizza,
         "toppings": toppings,
+        # "pizza_topping": pizza_topping
     }
     return render(request, "pizza/pizza_detail.html", context)
 
@@ -164,4 +168,23 @@ def deletePizzaView(request, pk):
         return redirect("starting-page")
 
     return render(request, "pizza/delete.html", context)
+
+
+def deletePizzaToppingView(request, pk):
+    pizza_topping = PizzaTopping.objects.filter(id=pk)
+    # pizza = Pizza.objects.filter(pizza=pizza)
+
+    print("pizza topping:", pizza_topping.query)
+    try:
+        pizza_topping.delete()
+        
+        messages.success(request, "Pizza topping was removed successfully!")
+        # return redirect("pizza-detail")
+        # return redirect("staring-page")
+
+    except Exception as e:
+        error_message = e
+        messages.error(request, f"An error occured removing the pizza topping. ERROR: {error_message}")
+
+    return render(request, "pizza/pizza_detail.html")
 
