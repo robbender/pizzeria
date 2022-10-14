@@ -38,8 +38,8 @@
                             </div>
 
                             <div class="mt-5">
-
                                 <table class="table">
+                                    {% if toppings %}
                                     <thead>
                                         <tr class="align-middle">
                                             <th scope="col" class="">no.</th>
@@ -48,7 +48,9 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-
+                                    {% else %}
+                                    -- No toppings --
+                                    {% endif %}
 
                                     <tbody>
                                         {% for item in toppings %}
@@ -104,6 +106,7 @@
                     <div class="mt-5">
 
                         <table class="table">
+                            {% if pizzas %}
                             <thead>
                                 <tr class="align-middle">
                                     <th scope="col" class="">no.</th>
@@ -112,6 +115,9 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            {% else %}
+                            -- No pizzas --
+                            {% endif %}
 
 
                             <tbody>
