@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5cc=*0eb+2&@3^87(b!t78&66w+$b!@+yw+sgy&w4mnnvb(y5@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ["robb-pizzeria.herokuapp.com", "127.0.0.1"]
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["robb-pizzaria.herokuapp.com", "localhost"]
 
 
