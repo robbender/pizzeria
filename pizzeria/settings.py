@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 
 # added global static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pizza/static/'),
+    # os.path.join(BASE_DIR, 'pizza/static/'),
     os.path.join(BASE_DIR, 'static'),
     # BASE_DIR / "static"
 ]
