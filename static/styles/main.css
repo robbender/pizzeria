@@ -66,6 +66,12 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    display: inline-block;
+    color: var(--color-success);
+    text-decoration: none;
+}
+
 /*========== components ==========*/
 .container {
     max-width: 120rem;
