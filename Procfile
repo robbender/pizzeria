@@ -1,1 +1,1 @@
-web: gunicorn robb-pizzeria.wsgi --log-file -
+web: gunicorn pizzeria.wsgi
