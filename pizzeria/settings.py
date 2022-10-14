@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5cc=*0eb+2&@3^87(b!t78&66w+$b!@+yw+sgy&w4mnnvb(y5@
 DEBUG = False
 
 ALLOWED_HOSTS = ["robb-pizzaria.herokuapp.com"]
-CSRF_TRUSTED_ORIGINS = ["https://robb-pizzaria.herokuapp.com"]
+# CSRF_TRUSTED_ORIGINS = ["https://robb-pizzaria.herokuapp.com"]
 
 
 
