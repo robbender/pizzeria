@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-5cc=*0eb+2&@3^87(b!t78&66w+$b!@+yw+sgy&w4mnnvb(y5@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["robb-pizzaria.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["robb-pizzaria.herokuapp.com", "127.0.0.1"]
+
 # ALLOWED_HOSTS = []
 
 
@@ -131,11 +132,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # added global static files
-STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'pizza/static/'),
-    os.path.join(BASE_DIR, 'static'),
-    # BASE_DIR / "static"
-]
+# STATICFILES_DIRS = [
+#     # os.path.join(BASE_DIR, 'pizza/static/'),
+#     os.path.join(BASE_DIR, 'static'),
+#     # BASE_DIR / "static"
+# ]
 
 
 # MEDIA_ROOT = BASE_DIR / "media"
