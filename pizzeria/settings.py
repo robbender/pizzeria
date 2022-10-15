@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5cc=*0eb+2&@3^87(b!t78&66w+$b!@+yw+sgy&w4mnnvb(y5@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["robb-pizzaria.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["localhost"]
 # CSRF_TRUSTED_ORIGINS = ["https://robb-pizzaria.herokuapp.com"]
 
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
     
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
