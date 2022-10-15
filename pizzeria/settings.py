@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
-# PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-5cc=*0eb+2&@3^87(b!t78&66w+$b!@+yw+sgy&w4mnnvb(y5@
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# manage.py runserver --insecure
 
 ALLOWED_HOSTS = ["localhost"]
 # CSRF_TRUSTED_ORIGINS = ["https://robb-pizzaria.herokuapp.com"]
@@ -128,12 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # added global static files
 STATICFILES_DIRS = [
