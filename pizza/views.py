@@ -15,7 +15,7 @@ def startingPage(request):
         "pizzas": pizzas,
         # "pizza_toppings": pizza_toppings,
     }
-    return render(request, "pizza/starting_page.html", context)
+    return render(request, "pizza/index.html", context)
 
 def pizzaDetail(request, pk):
     pizza = Pizza.objects.get(id=pk)
