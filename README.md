@@ -35,7 +35,5 @@
 `$ python manage.py runserver` <br />
 
 
-
-
 ## link to live demo<br />
 [Live Demo for testing](http://robertbender.pythonanywhere.com/)<br />
