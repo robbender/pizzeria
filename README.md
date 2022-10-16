@@ -4,7 +4,7 @@
 
 `$ virtualenv venv --python=/usr/local/bin/python3`
 Or
-`$ virtualenv venv -p /`which python3`/`
+`$ virtualenv venv -p \`which python3`\`
 
 ## Install all packages from requirements.txt:
 
