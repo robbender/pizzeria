@@ -5,7 +5,7 @@
 `$ pip install virtualenv`
 ## windows
 `python -m venv <venv-name>`
-## To activate
+### To activate
 `$ .\env\scripts\activate.bat`
 
 ## mac
@@ -14,7 +14,7 @@
 ### Or <br />
 
 ``$ virtualenv venv -p `which python3` `` <br />
-## To activate
+### To activate
 `$ source <venv-name>/bin/activate`
 
 ## To deactivate
