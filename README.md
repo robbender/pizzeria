@@ -28,6 +28,14 @@
 `$ python manage.py makemigrations`<br />
 `$ python manage.py migrate`<br />
 
+## DEBUG = False
+`$ python manage.py runserver --insecure` <br />
+
+## DEBUG = True
+`$ python manage.py runserver` <br />
+
+
+
 
 ## link to live demo<br />
 [Live Demo for testing](http://robertbender.pythonanywhere.com/)<br />
