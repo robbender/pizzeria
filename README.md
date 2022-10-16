@@ -2,12 +2,12 @@
 
 ## Create virtual environment:
 
--`$ virtualenv venv --python=/usr/local/bin/python3`
-\
-### Or 
-\
--``$ virtualenv venv -p `which python3` ``
-\
+-`$ virtualenv venv --python=/usr/local/bin/python3`(<br>)
+
+### Or (<br>)
+
+-``$ virtualenv venv -p `which python3` `` (<br>)
+
 
 ## Install all packages from requirements.txt:
 
