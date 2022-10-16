@@ -2,21 +2,21 @@
 
 ## Create virtual environment:
 
--`$ virtualenv venv --python=/usr/local/bin/python3`(<br>)
+-`$ virtualenv venv --python=/usr/local/bin/python3`<br />
 
-### Or (<br>)
+### Or <br />
 
--``$ virtualenv venv -p `which python3` `` (<br>)
-
-
-## Install all packages from requirements.txt:
-
--`python3 -m pip install -r requirements.txt` 
-
-## to run locally:
--`python manage.py makemigrations`
--`python manage.py migrate`
+-``$ virtualenv venv -p `which python3` `` <br />
 
 
-## link to live demo
-[Live Demo for testing](http://robertbender.pythonanywhere.com/)
+## Install all packages from requirements.txt: <br />
+
+-`python3 -m pip install -r requirements.txt`  <br />
+
+## to run locally:<br />
+-`python manage.py makemigrations`<br />
+-`python manage.py migrate`<br />
+
+
+## link to live demo<br />
+[Live Demo for testing](http://robertbender.pythonanywhere.com/)<br />
